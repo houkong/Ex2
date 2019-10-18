@@ -1,2 +1,6 @@
 from params import*
-print(g)
+from dampedharmonic import*
+import matplotlib.pyplot as plt
+t, theta = rk4()
+plt.plot(t, theta)
+plt.show()
