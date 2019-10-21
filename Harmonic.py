@@ -3,6 +3,14 @@ import numpy as np
 
 
 class Harmonic:
+    """
+    Each class method returns a function.
+    Writing Harmonic.damped(q)() returns the solution of a damped
+    harmonic oscillator for a given friction coefficient q.
+    Writing Harmonic.forced_damped()() returns the solution of a damped
+    harmonic oscillator for the external force and friction coefficient q defined
+    in params.py
+    """
     def __init__(self, friction=1, force=None):
         self.friction = friction
         self.force = force
@@ -22,7 +30,6 @@ class Harmonic:
             """
             if self.force is not None:
                 external_force = self.force(t)
-                print(external_force)
             else:
                 external_force = 0
             return -(params.g / params.l) * theta - self.friction * omega + external_force
