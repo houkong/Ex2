@@ -23,7 +23,7 @@ class Harmonic:
     def forced_damped(cls, force = params.driving_force, friction=params.q):
         return cls(friction, force)
 
-    def __call__(self, step=0.1, stop=10, start=0):
+    def __call__(self, step=0.01, stop=10, start=0):
         def omega_prime(theta, omega, t):
             """
             :return: derivative of omega with respect to time at some point theta
@@ -60,5 +60,6 @@ class Harmonic:
             t4 = theta_prime(omega[i] + t3 * step)
             theta[i + 1] = theta[i] + (step / 6) * (t1 + 2 * t2 + 2 * t3 + t4)
 
-        return t, theta
+        work = 0.5*(omega*omega - params.omega0**2) + (params.g/params.l)*(theta*theta - params.theta0**2)
+        return t, theta, work
 
