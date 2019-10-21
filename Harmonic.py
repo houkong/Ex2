@@ -60,6 +60,6 @@ class Harmonic:
             t4 = theta_prime(omega[i] + t3 * step)
             theta[i + 1] = theta[i] + (step / 6) * (t1 + 2 * t2 + 2 * t3 + t4)
 
-        work = 0.5*(omega*omega - params.omega0**2) + (params.g/params.l)*(theta*theta - params.theta0**2)
+        work = 0.5*(params.l**2) * (omega*omega - params.omega0**2) + (params.g*params.l)*(theta*theta - params.theta0**2)
         return t, theta, work
 

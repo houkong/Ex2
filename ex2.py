@@ -25,7 +25,7 @@ plt.plot(t1, w1, label="q = 1, underdamped")
 plt.plot(t2, w2, label="q = 2, critical damping")
 plt.plot(t3, w3, label="q = 6, overdamped")
 plt.xlabel("t [s]")
-plt.ylabel("W [J/m]")
+plt.ylabel("W [J/kg]")
 plt.title("Work done by damped harmonic oscillator")
 plt.legend()
 if not os.path.exists("plots"):
