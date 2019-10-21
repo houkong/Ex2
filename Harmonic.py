@@ -5,7 +5,7 @@ import numpy as np
 class Harmonic:
     """
     Each class method returns a function.
-    Writing Harmonic.damped(q)() returns the solution of a damped
+    Writing Harmonic.damped(q)( ) returns the solution of a damped
     harmonic oscillator for a given friction coefficient q.
     Writing Harmonic.forced_damped()() returns the solution of a damped
     harmonic oscillator for the external force and friction coefficient q defined

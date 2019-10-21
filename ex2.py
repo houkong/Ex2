@@ -1,6 +1,7 @@
 from params import*
 from Harmonic import*
 import matplotlib.pyplot as plt
+import numpy as np
 import os
 
 t1, theta1 = Harmonic.damped(2)()
@@ -17,3 +18,23 @@ plt.legend()
 if not os.path.exists("plots"):
     os.mkdir("plots")
 plt.savefig("plots/damped_harmonic.png")
+plt.show()
+
+t1, theta1 = Harmonic.forced_damped(force=lambda t : F_D*np.sin(0.7*Omega_D*t))(stop=20)
+t2, theta2 = Harmonic.forced_damped(force=lambda t : F_D*np.sin(0.8*Omega_D*t))(stop=20)
+t3, theta3 = Harmonic.forced_damped(force=lambda t : F_D*np.sin(Omega_D*t))(stop=20)
+
+
+
+
+plt.plot(t1, theta1, label="0.5Ω")
+plt.plot(t2, theta2, label="0.8Ω")
+plt.plot(t3, theta3, label="1.0Ω")
+plt.xlabel("t [s]")
+plt.ylabel("θ [rad]")
+plt.title("Damped harmonic oscillator with external driving force")
+plt.legend()
+if not os.path.exists("plots"):
+    os.mkdir("plots")
+plt.savefig("plots/forced_harmonic.png")
+plt.show()
