@@ -21,9 +21,9 @@ plt.savefig("plots/damped_harmonic.png")
 plt.show()
 
 
-plt.plot(t1, w1, label="q = 2, underdamped")
-plt.plot(t2, w2, label="q = 5, critical damping")
-plt.plot(t3, w3, label="q = 10, overdamped")
+plt.plot(t1, w1, label="q = 1, underdamped")
+plt.plot(t2, w2, label="q = 2, critical damping")
+plt.plot(t3, w3, label="q = 6, overdamped")
 plt.xlabel("t [s]")
 plt.ylabel("W [J/m]")
 plt.title("Work done by damped harmonic oscillator")
