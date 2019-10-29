@@ -34,16 +34,16 @@ plt.savefig("plots/damped_harmonic_work.png")
 plt.show()
 
 
-t1, theta1, _ = Harmonic.forced_damped(force=lambda t : F_D*np.sin(0.7*Omega_D*t))(stop=20)
+t1, theta1, _ = Harmonic.forced_damped(force=lambda t : F_D*np.sin(0.5*Omega_D*t))(stop=20)
 t2, theta2, _ = Harmonic.forced_damped(force=lambda t : F_D*np.sin(0.8*Omega_D*t))(stop=20)
-t3, theta3, _ = Harmonic.forced_damped(force=lambda t : F_D*np.sin(Omega_D*t))(stop=20)
+t3, theta3, _ = Harmonic.forced_damped(force=lambda t : F_D*np.sin(1.0*Omega_D*t))(stop=20)
 
 
 
 
-plt.plot(t1, theta1, label="0.5Ω")
-plt.plot(t2, theta2, label="0.8Ω")
-plt.plot(t3, theta3, label="1.0Ω")
+plt.plot(t1, theta1, label="Ω_D =0.5Ω")
+plt.plot(t2, theta2, label="Ω_D =0.8Ω")
+plt.plot(t3, theta3, label="Ω_D =1.0Ω")
 plt.xlabel("t [s]")
 plt.ylabel("θ [rad]")
 plt.title("Damped harmonic oscillator with external driving force")
